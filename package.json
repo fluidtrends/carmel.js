@@ -1,6 +1,6 @@
 {
   "name": "@carmel/js",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "The Carmel JavaScript Library",
   "scripts": {
     "compile": "rm -rf lib && ./node_modules/.bin/tsc",
