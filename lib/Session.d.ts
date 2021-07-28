@@ -1,0 +1,46 @@
+import { Wallet, Cache, ACCOUNT, Chain, Data, Node, EVENT, SESSION_STATUS } from '.';
+export declare class Session {
+    private _id;
+    private _wallet?;
+    private _data;
+    private _chain;
+    private _isBrowser;
+    private _account?;
+    private _cache;
+    private _status;
+    private _config;
+    private _listeners;
+    private _dir;
+    private _node;
+    constructor(config: any);
+    save(): Promise<void>;
+    load(): Promise<void>;
+    init(): Promise<void>;
+    get dir(): any;
+    get account(): ACCOUNT | undefined;
+    get listeners(): any;
+    get chain(): Chain;
+    get config(): any;
+    get id(): string;
+    get node(): Node;
+    get status(): SESSION_STATUS;
+    get cache(): Cache;
+    get wallet(): Wallet | undefined;
+    get data(): Data;
+    get isBrowser(): boolean;
+    openWallet(mnemonic: string): Wallet | undefined;
+    listen(onEvent: any): void;
+    onEvent(type: EVENT, data: any): void;
+    setStatus(s: SESSION_STATUS): void;
+    get isReady(): boolean;
+    log(msg: string): void;
+    toJSON(): {
+        id: string;
+        cid: string;
+    };
+    start(): Promise<void>;
+    findUser(username: string): Promise<any>;
+    register(username: string, password: string): Promise<void>;
+    saveAccount(username: string, mnemonic: string, signature: string): Promise<void>;
+    clearAccount(): Promise<void>;
+}
