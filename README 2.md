@@ -1,2 +1,0 @@
-# carmel-api
-Carmel API
